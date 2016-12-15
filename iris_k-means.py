@@ -21,15 +21,13 @@ f,axarr=pl.subplots(3,2)
 axarr_flat=axarr.flat
 
 for comb, axflat in zip(combs,axarr_flat):
-        for target, color, label in zip(targets,colors,labels):
-                feature_index_x=comb[0]
-                feature_index_y=comb[1]
+    for target, color, label in zip(targets,colors,labels):
+        feature_index_x=comb[0]
+        feature_index_y=comb[1]
 
-     axflat.scatter(iris.data[predictions==target,feature_index_x],
-
-     iris.data[predictions==target,feature_index_y],c=color,label=label)
-                axflat.set_xlabel(feature_names[feature_index_x])
-                axflat.set_ylabel(feature_names[feature_index_y])
+    axflat.scatter(iris.data[predictions==target,feature_index_x],iris.data[predictions==target,feature_index_y],c=color,label=label)
+    axflat.set_xlabel(feature_names[feature_index_x])
+    axflat.set_ylabel(feature_names[feature_index_y])
 
 f.tight_layout()
 pl.show()
